@@ -34,11 +34,11 @@
 - [x] Task 2.21: Test IQ filtering.
 - [x] Task 2.22: Test sorting functionality.
 - [x] Task 2.23: Test delete and reset.
-- [ ] Task 2.24: Verify ESLint passes.
-- [ ] Task 2.25: Verify production build succeeds.
+- [x] Task 2.24: Verify ESLint passes.
+- [x] Task 2.25: Verify production build succeeds.
 
 ### Phase 6: Documentation and Submission
 - [x] Task 2.26: Create TASK_DECOMPOSITION.md.
-- [ ] Task 2.27: Complete project-rules.md.
-- [ ] Task 2.28: Complete AI_FAILURE_AUDIT.md.
-- [ ] Task 2.29: Push EX2 to GitHub.
+- [x] Task 2.27: Complete project-rules.md.
+- [x] Task 2.28: Complete AI_FAILURE_AUDIT.md.
+- [x] Task 2.29: Push EX2 to GitHub.
