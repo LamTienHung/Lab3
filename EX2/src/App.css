@@ -2,3 +2,36 @@ main {
   width: min(100% - 32px, 1100px);
   margin: 40px auto;
 }
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-section label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.search-section input {
+  width: 100%;
+  max-width: 450px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: #1e293b;
+}
+
+.search-section input:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.result-count {
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 20px;
+}
