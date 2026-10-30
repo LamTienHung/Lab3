@@ -6,16 +6,36 @@ import "./App.css";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [minIQ, setMinIQ] = useState("");
+  const [sortBy, setSortBy] = useState("default");
 
-  const filteredScientists = scientists.filter((scientist) => {
-    const matchesName = scientist.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+  const filteredScientists = scientists
+    .filter((scientist) => {
+      const matchesName = scientist.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
 
-    const matchesIQ = minIQ === "" || scientist.iq >= Number(minIQ);
+      const matchesIQ = minIQ === "" || scientist.iq >= Number(minIQ);
 
-    return matchesName && matchesIQ;
-  });
+      return matchesName && matchesIQ;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "name-asc":
+          return a.name.localeCompare(b.name);
+
+        case "name-desc":
+          return b.name.localeCompare(a.name);
+
+        case "iq-asc":
+          return a.iq - b.iq;
+
+        case "iq-desc":
+          return b.iq - a.iq;
+
+        default:
+          return 0;
+      }
+    });
 
   return (
     <main>
@@ -41,6 +61,19 @@ function App() {
           value={minIQ}
           onChange={(event) => setMinIQ(event.target.value)}
         />
+
+        <label htmlFor="sort-by">Sort by:</label>
+        <select
+          id="sort-by"
+          value={sortBy}
+          onChange={(event) => setSortBy(event.target.value)}
+        >
+          <option value="default">Default order</option>
+          <option value="name-asc">Name (A–Z)</option>
+          <option value="name-desc">Name (Z–A)</option>
+          <option value="iq-asc">IQ (Low to High)</option>
+          <option value="iq-desc">IQ (High to Low)</option>
+        </select>
       </section>
 
       <p className="result-count" role="status">
