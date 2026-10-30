@@ -21,12 +21,15 @@ export default function DeveloperCard({
         .toUpperCase();
 
     const validAvatar =
-        typeof avatar === "string" &&
-        avatar.startsWith("https://") &&
-        !imageError;
+    typeof avatar === "string" &&
+    (
+        avatar.startsWith("https://") ||
+        avatar.startsWith("/images/")
+    ) &&
+    !imageError;
 
     return (
-        <article className={styles.card}>
+        <article className={styles.card} aria-labelledby="developer-name">
             <header className={styles.header}>
                 {validAvatar ? (
                     <img
@@ -46,7 +49,7 @@ export default function DeveloperCard({
                     </span>
                 )}
 
-                <h2>{name}</h2>
+                <h2 id="developer-name">{name}</h2>
                 <p className={styles.role}>{role}</p>
             </header>
 

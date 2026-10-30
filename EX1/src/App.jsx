@@ -2,11 +2,11 @@ import "./App.css";
 import DeveloperCard from "./components/DeveloperCard";
 
 const developer = {
-    name: "Nguyen Van A",
+    name: "Pham Minh Quan",
     role: "Frontend Developer",
     location: "Ho Chi Minh City, Vietnam",
     bio: "Passionate about web development and modern technologies.",
-    avatar: "https://i.pravatar.cc/300",
+    avatar: "/images/avatar.jpg",   
     skills: [
         { id: "react", name: "React", level: "Advanced" },
         { id: "javascript", name: "JavaScript", level: "Advanced" },
