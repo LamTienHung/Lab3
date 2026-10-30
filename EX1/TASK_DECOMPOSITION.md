@@ -33,7 +33,7 @@
 - [x] Task 1.21: Record actual fixes and verification results.
 
 ### Phase 6: Git and Submission
-- [ ] Task 1.22: Create at least two atomic commits.
-- [ ] Task 1.23: Update TASK_DECOMPOSITION.md.
-- [ ] Task 1.24: Complete AI_FAILURE_AUDIT.md.
-- [ ] Task 1.25: Push Exercise 1 to GitHub.
+- [x] Task 1.22: Create at least two atomic commits.
+- [x] Task 1.23: Update TASK_DECOMPOSITION.md.
+- [x] Task 1.24: Complete AI_FAILURE_AUDIT.md.
+- [x] Task 1.25: Push Exercise 1 to GitHub.
