@@ -87,3 +87,86 @@ main {
   outline: 3px solid #1e40af;
   outline-offset: 3px;
 }
+/* Improved directory layout */
+
+.scientist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.scientist-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
+}
+
+.scientist-card h2 {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: #1d4ed8;
+  margin: 0 0 20px;
+}
+
+.scientist-card dl {
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.scientist-card dt {
+  font-weight: 600;
+  color: #475569;
+}
+
+.scientist-card dd {
+  margin: 0;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.delete-button {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 16px;
+  background: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.scientist-card dl + .delete-button {
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .scientist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .scientist-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .scientist-card {
+    padding: 20px;
+  }
+
+  .scientist-card dl {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+
+  .scientist-card h2 {
+    font-size: 1.2rem;
+  }
+}
