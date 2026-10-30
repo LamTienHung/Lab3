@@ -1,0 +1,39 @@
+.card {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 24px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+}
+
+.header {
+    text-align: center;
+}
+
+.avatar,
+.fallback {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.fallback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #2563eb;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.role {
+    color: #555;
+}
+
+.details,
+.skills {
+    margin-top: 24px;
+}
