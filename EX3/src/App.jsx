@@ -39,7 +39,10 @@ function App() {
 
         <p>Currently monitoring: {selectedSquad.name}</p>
 
-        <PubgMatchTelemetry squad={selectedSquad} />
+        <PubgMatchTelemetry
+  key={selectedSquadId}
+  squadId={selectedSquadId}
+/>
       </section>
     </main>
   )

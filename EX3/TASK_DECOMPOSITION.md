@@ -15,18 +15,18 @@
 - [x] Task 3.8: Create squad selection controls.
 
 ### Phase 3: State Machine
-- [ ] Task 3.9: Implement IDLE state.
+- [x] Task 3.9: Implement IDLE state.
 - [ ] Task 3.10: Implement LOADING state.
-- [ ] Task 3.11: Implement SUCCESS state.
-- [ ] Task 3.12: Implement ERROR state.
-- [ ] Task 3.13: Implement simulated telemetry requests.
-- [ ] Task 3.14: Simulate 35% network failure probability.
-- [ ] Task 3.15: Implement retry functionality.
+- [x] Task 3.11: Implement SUCCESS state.
+- [x] Task 3.12: Implement ERROR state.
+- [x] Task 3.13: Implement simulated telemetry requests.
+- [x] Task 3.14: Simulate 35% network failure probability.
+- [x] Task 3.15: Implement retry functionality.
 
 ### Phase 4: Effect Lifecycle and Cleanup
-- [ ] Task 3.16: Fetch telemetry using useEffect.
-- [ ] Task 3.17: Implement AbortController cleanup.
-- [ ] Task 3.18: Prevent stale responses when switching squads.
+- [x] Task 3.16: Fetch telemetry using useEffect.
+- [x] Task 3.17: Implement AbortController cleanup.
+- [x] Task 3.18: Prevent stale responses when switching squads.
 - [ ] Task 3.19: Verify cleanup when component unmounts.
 
 ### Phase 5: UI and Accessibility
