@@ -27,25 +27,25 @@
 - [x] Task 3.16: Fetch telemetry using useEffect.
 - [x] Task 3.17: Implement AbortController cleanup.
 - [x] Task 3.18: Prevent stale responses when switching squads.
-- [ ] Task 3.19: Verify cleanup when component unmounts.
+- [x] Task 3.19: Verify cleanup when component unmounts.
 
 ### Phase 5: UI and Accessibility
-- [ ] Task 3.20: Display map, phase, alive players, kills, and WWCD probability.
+- [x] Task 3.20: Display map, phase, alive players, kills, and WWCD probability.
 - [x] Task 3.21: Create 220px skeleton loading UI.
 - [x] Task 3.22: Display accessible error messages.
-- [ ] Task 3.23: Implement responsive layout at 375px.
-- [ ] Task 3.24: Use semantic HTML elements.
+- [x] Task 3.23: Implement responsive layout at 375px.
+- [x] Task 3.24: Use semantic HTML elements.
 
 ### Phase 6: Testing
-- [ ] Task 3.25: Test squad selection.
-- [ ] Task 3.26: Test all four UI states.
-- [ ] Task 3.27: Test retry after network failure.
-- [ ] Task 3.28: Test rapid squad switching.
-- [ ] Task 3.29: Verify ESLint passes.
-- [ ] Task 3.30: Verify production build succeeds.
+- [x] Task 3.25: Test squad selection.
+- [x] Task 3.26: Test all four UI states.
+- [x] Task 3.27: Test retry after network failure.
+- [x] Task 3.28: Test rapid squad switching.
+- [x] Task 3.29: Verify ESLint passes.
+- [x] Task 3.30: Verify production build succeeds.
 
 ### Phase 7: Documentation and Submission
-- [ ] Task 3.31: Complete project-rules.md.
-- [ ] Task 3.32: Complete AI_FAILURE_AUDIT.md.
+- [x] Task 3.31: Complete project-rules.md.
+- [x] Task 3.32: Complete AI_FAILURE_AUDIT.md.
 - [ ] Task 3.33: Verify Git commit history.
 - [ ] Task 3.34: Push EX3 to GitHub.

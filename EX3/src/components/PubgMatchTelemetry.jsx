@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { fetchKraftonPubgTelemetry } from '../services/pubgTelemetry'
 
 export function PubgMatchTelemetry({ squadId }) {
+  const [isConnected, setIsConnected] = useState(false)
   const [retryCount, setRetryCount] = useState(0)
+
   const [view, setView] = useState({
     status: 'IDLE',
     data: null,
@@ -10,13 +12,9 @@ export function PubgMatchTelemetry({ squadId }) {
   })
 
   useEffect(() => {
-    const controller = new AbortController()
+  if (!isConnected) return
 
-    setView({
-      status: 'LOADING',
-      data: null,
-      error: null,
-    })
+  const controller = new AbortController()
 
     fetchKraftonPubgTelemetry(squadId, {
       signal: controller.signal,
@@ -43,9 +41,33 @@ export function PubgMatchTelemetry({ squadId }) {
       })
 
     return () => controller.abort()
-  }, [squadId, retryCount])
+  }, [squadId, retryCount, isConnected])
 
-  if (view.status === 'IDLE' || view.status === 'LOADING') {
+  if (view.status === 'IDLE') {
+  return (
+    <section className="telemetry-card">
+      <h3>Satellite Disconnected</h3>
+      <p>Select Connect Satellite to start monitoring.</p>
+
+      <button
+        type="button"
+        className="retry-button"
+        onClick={() => {
+          setView({
+            status: 'LOADING',
+            data: null,
+            error: null,
+          })
+          setIsConnected(true)
+        }}
+      >
+        Connect Satellite
+      </button>
+    </section>
+  )
+}
+
+  if (view.status === 'LOADING') {
     return (
       <section
         className="telemetry-skeleton"
@@ -69,7 +91,14 @@ export function PubgMatchTelemetry({ squadId }) {
         <button
           type="button"
           className="retry-button"
-          onClick={() => setRetryCount((count) => count + 1)}
+          onClick={() => {
+  setView({
+    status: 'LOADING',
+    data: null,
+    error: null,
+  })
+  setRetryCount((count) => count + 1)
+}}
         >
           Reconnect Satellite
         </button>
