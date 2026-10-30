@@ -6,11 +6,11 @@
 - [x] Task 3.1: Initialize React project using Vite.
 - [x] Task 3.2: Install project dependencies.
 - [x] Task 3.3: Verify Vite development server.
-- [ ] Task 3.4: Remove default Vite boilerplate.
+- [x] Task 3.4: Remove default Vite boilerplate.
 
 ### Phase 2: Data and Component Architecture
-- [ ] Task 3.5: Create PUBG Vietnam squad dataset.
-- [ ] Task 3.6: Define telemetry data structure.
+- [x] Task 3.5: Create PUBG Vietnam squad dataset.
+- [x] Task 3.6: Define telemetry data structure.
 - [ ] Task 3.7: Create reusable TelemetryWidget component.
 - [ ] Task 3.8: Create squad selection controls.
 
