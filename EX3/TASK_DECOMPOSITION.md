@@ -16,7 +16,7 @@
 
 ### Phase 3: State Machine
 - [x] Task 3.9: Implement IDLE state.
-- [ ] Task 3.10: Implement LOADING state.
+- [x] Task 3.10: Implement LOADING state.
 - [x] Task 3.11: Implement SUCCESS state.
 - [x] Task 3.12: Implement ERROR state.
 - [x] Task 3.13: Implement simulated telemetry requests.
@@ -31,8 +31,8 @@
 
 ### Phase 5: UI and Accessibility
 - [ ] Task 3.20: Display map, phase, alive players, kills, and WWCD probability.
-- [ ] Task 3.21: Create 220px skeleton loading UI.
-- [ ] Task 3.22: Display accessible error messages.
+- [x] Task 3.21: Create 220px skeleton loading UI.
+- [x] Task 3.22: Display accessible error messages.
 - [ ] Task 3.23: Implement responsive layout at 375px.
 - [ ] Task 3.24: Use semantic HTML elements.
 
