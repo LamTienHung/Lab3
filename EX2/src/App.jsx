@@ -4,11 +4,25 @@ import { scientists } from "./data/scientists";
 import "./App.css";
 
 function App() {
+  const [scientistList, setScientistList] = useState(() => [...scientists]);
   const [searchTerm, setSearchTerm] = useState("");
   const [minIQ, setMinIQ] = useState("");
   const [sortBy, setSortBy] = useState("default");
 
-  const filteredScientists = scientists
+  function handleDelete(id) {
+    setScientistList((previousList) =>
+      previousList.filter((scientist) => scientist.id !== id)
+    );
+  }
+
+  function handleReset() {
+    setScientistList([...scientists]);
+    setSearchTerm("");
+    setMinIQ("");
+    setSortBy("default");
+  }
+
+  const filteredScientists = scientistList
     .filter((scientist) => {
       const matchesName = scientist.name
         .toLowerCase()
@@ -74,6 +88,14 @@ function App() {
           <option value="iq-asc">IQ (Low to High)</option>
           <option value="iq-desc">IQ (High to Low)</option>
         </select>
+
+        <button
+          type="button"
+          className="reset-button"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
       </section>
 
       <p className="result-count" role="status">
@@ -82,7 +104,11 @@ function App() {
 
       <section className="scientist-grid" aria-label="Scientist list">
         {filteredScientists.map((scientist) => (
-          <ScientistCard key={scientist.id} scientist={scientist} />
+          <ScientistCard
+            key={scientist.id}
+            scientist={scientist}
+            onDelete={handleDelete}
+          />
         ))}
       </section>
 

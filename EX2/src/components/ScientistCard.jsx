@@ -1,4 +1,4 @@
-function ScientistCard({ scientist }) {
+function ScientistCard({ scientist, onDelete }) {
   return (
     <article className="scientist-card">
       <h2>{scientist.name}</h2>
@@ -16,6 +16,15 @@ function ScientistCard({ scientist }) {
         <dt>Country:</dt>
         <dd>{scientist.country}</dd>
       </dl>
+
+      <button
+        type="button"
+        className="delete-button"
+        onClick={() => onDelete(scientist.id)}
+        aria-label={`Delete ${scientist.name}`}
+      >
+        Delete
+      </button>
     </article>
   );
 }

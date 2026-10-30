@@ -51,3 +51,39 @@ main {
   outline: 2px solid #2563eb;
   outline-offset: 2px;
 }
+.delete-button,
+.reset-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-button {
+  margin-top: 20px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.delete-button:hover {
+  background-color: #fecaca;
+}
+
+.reset-button {
+  width: fit-content;
+  background-color: #2563eb;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: #1d4ed8;
+}
+
+.delete-button:focus-visible,
+.reset-button:focus-visible {
+  outline: 3px solid #1e40af;
+  outline-offset: 3px;
+}
