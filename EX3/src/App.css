@@ -90,3 +90,45 @@
     font-size: 20px;
   }
 }
+.squad-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.squad-button {
+  padding: 12px 20px;
+  background: #111a29;
+  color: #f5f7fa;
+  border: 1px solid #354155;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.squad-button:hover {
+  background: #26364d;
+}
+
+.squad-button.active {
+  background: #f5b700;
+  color: #101722;
+  border-color: #f5b700;
+  font-weight: 700;
+}
+
+.squad-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .squad-selector {
+    flex-direction: column;
+  }
+
+  .squad-button {
+    width: 100%;
+  }
+}

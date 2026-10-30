@@ -11,8 +11,8 @@
 ### Phase 2: Data and Component Architecture
 - [x] Task 3.5: Create PUBG Vietnam squad dataset.
 - [x] Task 3.6: Define telemetry data structure.
-- [ ] Task 3.7: Create reusable TelemetryWidget component.
-- [ ] Task 3.8: Create squad selection controls.
+- [x] Task 3.7: Create reusable TelemetryWidget component.
+- [x] Task 3.8: Create squad selection controls.
 
 ### Phase 3: State Machine
 - [ ] Task 3.9: Implement IDLE state.
