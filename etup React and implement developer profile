@@ -1,0 +1,15 @@
+.gitignore
+EX1/AI_FAILURE_AUDIT.md
+EX1/TASK_DECOMPOSITION.md
+EX1/index.html
+EX1/package-lock.json
+EX1/package.json
+EX1/project-rules.md
+EX1/src/App.css
+EX1/src/App.jsx
+EX1/src/components/DeveloperCard.jsx
+EX1/src/components/DeveloperCard.module.css
+EX1/src/components/SkillBadge.jsx
+EX1/src/index.css
+EX1/src/main.jsx
+EX1/vite.config.js

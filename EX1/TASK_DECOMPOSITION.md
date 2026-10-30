@@ -22,7 +22,7 @@
 
 ### Phase 4: Testing
 - [x] Task 1.14: Verify zero div elements in DeveloperCard.
-- [ ] Task 1.15: Verify HTTPS-only image URLs.
+- [x] Task 1.15: Verify HTTPS-only image URLs.
 - [x] Task 1.16: Test responsive layout at 375px.
 - [x] Task 1.17: Inspect accessibility using Chrome DevTools.
 - [x] Task 1.18: Verify no JavaScript errors.
