@@ -5,19 +5,25 @@ import "./App.css";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [minIQ, setMinIQ] = useState("");
 
-  const filteredScientists = scientists.filter((scientist) =>
-    scientist.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredScientists = scientists.filter((scientist) => {
+    const matchesName = scientist.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    const matchesIQ = minIQ === "" || scientist.iq >= Number(minIQ);
+
+    return matchesName && matchesIQ;
+  });
 
   return (
     <main>
       <h1>Scientist & Pioneer Directory</h1>
       <p>Explore influential scientists and pioneers.</p>
 
-      <section className="search-section" aria-label="Search scientists">
+      <section className="search-section" aria-label="Filter scientists">
         <label htmlFor="scientist-search">Search by name:</label>
-
         <input
           id="scientist-search"
           type="search"
@@ -25,9 +31,19 @@ function App() {
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
         />
+
+        <label htmlFor="min-iq">Minimum IQ:</label>
+        <input
+          id="min-iq"
+          type="number"
+          min="0"
+          placeholder="Enter minimum IQ..."
+          value={minIQ}
+          onChange={(event) => setMinIQ(event.target.value)}
+        />
       </section>
 
-      <p className="result-count">
+      <p className="result-count" role="status">
         Showing {filteredScientists.length} scientist(s)
       </p>
 
@@ -38,7 +54,7 @@ function App() {
       </section>
 
       {filteredScientists.length === 0 && (
-        <p role="status">No scientists found.</p>
+        <p>No scientists found.</p>
       )}
     </main>
   );
