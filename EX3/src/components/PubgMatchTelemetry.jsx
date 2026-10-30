@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchKraftonPubgTelemetry } from '../services/pubgTelemetry'
 
 export function PubgMatchTelemetry({ squadId }) {
+  const [retryCount, setRetryCount] = useState(0)
   const [view, setView] = useState({
     status: 'IDLE',
     data: null,
@@ -11,17 +12,23 @@ export function PubgMatchTelemetry({ squadId }) {
   useEffect(() => {
     const controller = new AbortController()
 
+    setView({
+      status: 'LOADING',
+      data: null,
+      error: null,
+    })
+
     fetchKraftonPubgTelemetry(squadId, {
       signal: controller.signal,
     })
       .then((data) => {
-        if (!controller.signal.aborted) {
-          setView({
-            status: 'SUCCESS',
-            data,
-            error: null,
-          })
-        }
+        if (controller.signal.aborted) return
+
+        setView({
+          status: 'SUCCESS',
+          data,
+          error: null,
+        })
       })
       .catch((error) => {
         if (error.name === 'AbortError' || controller.signal.aborted) {
@@ -35,56 +42,72 @@ export function PubgMatchTelemetry({ squadId }) {
         })
       })
 
-    return () => {
-      controller.abort()
-    }
-  }, [squadId])
+    return () => controller.abort()
+  }, [squadId, retryCount])
 
   if (view.status === 'IDLE' || view.status === 'LOADING') {
     return (
-      <section aria-busy="true">
-        <p>Connecting to KRAFTON satellite...</p>
+      <section
+        className="telemetry-skeleton"
+        aria-label="Loading match telemetry"
+        aria-busy="true"
+      >
+        <p role="status">Connecting to KRAFTON satellite...</p>
+        <span className="skeleton-line" aria-hidden="true" />
+        <span className="skeleton-line short" aria-hidden="true" />
+        <span className="skeleton-line" aria-hidden="true" />
       </section>
     )
   }
 
   if (view.status === 'ERROR') {
     return (
-      <section role="alert">
-        <p>Blue-Zone Link Lost: {view.error}</p>
+      <section className="telemetry-error" role="alert">
+        <h3>Blue-Zone Link Lost</h3>
+        <p>{view.error}</p>
+
+        <button
+          type="button"
+          className="retry-button"
+          onClick={() => setRetryCount((count) => count + 1)}
+        >
+          Reconnect Satellite
+        </button>
       </section>
     )
   }
 
   if (view.status === 'SUCCESS') {
+    const squad = view.data
+
     return (
       <article
         className="telemetry-card"
-        aria-label={`${view.data.name} telemetry`}
+        aria-label={`${squad.name} telemetry`}
       >
         <header>
-          <h3>{view.data.name}</h3>
+          <h3>{squad.name}</h3>
           <p>Live Match Statistics</p>
         </header>
 
         <dl className="telemetry-stats">
           <dt>Map</dt>
-          <dd>{view.data.map}</dd>
+          <dd>{squad.map}</dd>
 
           <dt>Phase</dt>
-          <dd>{view.data.phase}</dd>
+          <dd>{squad.phase}</dd>
 
           <dt>Alive Players</dt>
-          <dd>{view.data.alive}</dd>
+          <dd>{squad.alive}</dd>
 
           <dt>Kills</dt>
-          <dd>{view.data.kills}</dd>
+          <dd>{squad.kills}</dd>
 
           <dt>WWCD Probability</dt>
-          <dd>{view.data.wwcdProb}</dd>
+          <dd>{squad.wwcdProb}</dd>
 
           <dt>Status</dt>
-          <dd>{view.data.status}</dd>
+          <dd>{squad.status}</dd>
         </dl>
       </article>
     )

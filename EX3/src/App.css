@@ -132,3 +132,85 @@
     width: 100%;
   }
 }
+.telemetry-skeleton {
+  height: 220px;
+  margin-top: 24px;
+  padding: 24px;
+  background: #111a29;
+  border: 1px solid #354155;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.telemetry-skeleton p {
+  margin: 0 0 24px;
+  color: #f5b700;
+  font-weight: 700;
+}
+
+.skeleton-line {
+  display: block;
+  height: 18px;
+  margin-bottom: 18px;
+  background: linear-gradient(
+    90deg,
+    #26364d 25%,
+    #3c506c 50%,
+    #26364d 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 6px;
+  animation: skeleton-loading 1.5s infinite linear;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+@keyframes skeleton-loading {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-line {
+    animation: none;
+  }
+}
+
+.telemetry-error {
+  margin-top: 24px;
+  padding: 24px;
+  background: #351c25;
+  border: 1px solid #d9534f;
+  border-radius: 12px;
+}
+
+.telemetry-error h3 {
+  margin-top: 0;
+  color: #ff8585;
+}
+
+.retry-button {
+  padding: 12px 20px;
+  background: #f5b700;
+  color: #101722;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background: #ffd24d;
+}
+
+.retry-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
