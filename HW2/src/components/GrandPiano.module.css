@@ -1,0 +1,184 @@
+.app {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 16px;
+  display: grid;
+  gap: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+.hint {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.section {
+  min-width: 0; /* cho phép vùng phím cuộn bên trong thay vì đẩy rộng trang */
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  font-size: 1.125rem;
+}
+
+.controls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field input[type='checkbox'] {
+  width: 24px;
+  height: 24px;
+}
+
+.button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.select {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+/* ---------- Bàn phím 88 phím ---------- */
+.keys {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px;
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.slot {
+  position: relative;
+  flex: 0 0 var(--white-w);
+}
+
+.white,
+.black {
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: background-color 60ms ease;
+}
+
+.white {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  padding: 0 0 8px;
+  border: 1px solid var(--key-white-border);
+  border-radius: 0 0 6px 6px;
+  background: var(--key-white);
+  color: var(--key-white-text);
+  font-size: 0.75rem;
+}
+
+.black {
+  position: absolute;
+  top: 0;
+  right: calc(var(--black-w) / -2);
+  z-index: 1;
+  width: var(--black-w);
+  height: 110px;
+  padding: 0;
+  border: 1px solid #000;
+  border-radius: 0 0 4px 4px;
+  background: var(--key-black);
+}
+
+.white[aria-pressed='true'],
+.black[aria-pressed='true'] {
+  background: var(--accent);
+}
+
+.white:focus-visible,
+.black:focus-visible {
+  outline-offset: -5px;
+}
+
+.white:focus-visible {
+  position: relative;
+  z-index: 2;
+}
+
+.black:focus-visible {
+  z-index: 3;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Recorder ---------- */
+.status {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.take {
+  margin: 8px 0 0;
+  padding-left: 24px;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .white,
+  .black {
+    transition: none;
+  }
+}
