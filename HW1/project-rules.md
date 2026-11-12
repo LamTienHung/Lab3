@@ -13,3 +13,7 @@
 8. AUDIO: Chỉ tạo AudioContext sau user gesture. Không tạo ở cấp module.
 9. STABLE REFS: Map/hằng cấu hình đặt ở cấp module; callback truyền xuống
    hook/memo component phải bọc useCallback.
+10. COMPLETE OUTPUT: Luôn xuất đủ package.json, vite.config.js, .gitignore, index.html.
+11. ZERO 404: index.html phải khai báo favicon (data URI nếu không có file).
+12. NO HARD ASSET DEPENDENCY: Asset ngoài repo phải có fallback.
+13. TYPING GUARD: Chỉ bỏ qua input dạng văn bản; checkbox/range/button vẫn nhận phím tắt.
