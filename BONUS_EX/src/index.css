@@ -1,0 +1,33 @@
+:root {
+  --bg: #120d1a;
+  --surface: #1f1730;
+  --border: #3d2f5c;
+  --text: #f1ecf9;
+  --muted: #b9add0;
+  --accent: #f472b6;
+  --on-accent: #120d1a;
+  --focus: #fbbf24;
+  --success: #4ade80;
+  --danger: #f87171;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
