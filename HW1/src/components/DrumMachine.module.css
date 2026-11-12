@@ -1,0 +1,148 @@
+.studio {
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 16px;
+  display: grid;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+.section {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.sectionTitle {
+  margin: 0 0 12px;
+  font-size: 1.125rem;
+}
+
+.alert {
+  border: 2px solid var(--danger);
+}
+
+.button {
+  min-height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  gap: 12px;
+}
+
+.pad {
+  width: 100%;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--pad-bg);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: transform 80ms ease, background-color 80ms ease;
+}
+
+.key {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pad[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  transform: scale(0.95);
+}
+
+.pad:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0 0 16px;
+}
+
+.field input[type='checkbox'] {
+  width: 24px;
+  height: 24px;
+}
+
+.field input[type='range'] {
+  flex: 1 1 160px;
+  min-height: 24px;
+}
+
+.text {
+  flex: 1 1 200px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.meter {
+  flex: 1 1 160px;
+  height: 24px;
+}
+
+.latest {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.log {
+  margin: 12px 0 0;
+  padding-left: 24px;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pad {
+    transition: none;
+  }
+  .pad[aria-pressed='true'] {
+    transform: none;
+  }
+}
