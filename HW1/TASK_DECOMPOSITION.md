@@ -103,14 +103,14 @@ hw1-drum-kit
 
 ## 3. Task → Commit
 
-| Task | Commit | Hash |
-|------|--------|------|
-| T0 | `chore(hw1): init react19 vite project & rules` | |
-| T1 | `feat(hw1): add pad config with stable code/id maps` | |
-| T2 | `feat(hw1): add useDrumAudio 4-state loader with AbortController` | |
-| T3 | `feat(hw1): add useDrumKeyboard with e.code, repeat & modifier guards` | |
-| T4 | `feat(hw1): render memoized DrumPad grid with aria-pressed` | |
-| T5 | `feat(hw1): add aria-live hit log and <meter> level meter` | |
-| T6 | `feat(hw1): add shortcut toggle (WCAG 2.1.4) and volume control` | |
-| T7 | `style(hw1): responsive 375px module, focus-visible, reduced motion` | |
-| T8 | `docs(hw1): record AI failures in AI_FAILURE_AUDIT.md` | |
+| Task | Commit |
+|------|--------|
+| T0 | `chore(hw1): init react19 vite project & rules` |
+| T1 | `feat(hw1): add pad config with stable code/id maps` |
+| T2 | `feat(hw1): add useDrumAudio 4-state loader with AbortController` |
+| T3 | `feat(hw1): add useDrumKeyboard with e.code, repeat & modifier guards` |
+| T4 | `feat(hw1): render memoized DrumPad grid with aria-pressed` |
+| T5 | `feat(hw1): add aria-live hit log and <meter> level meter` |
+| T6 | `feat(hw1): add shortcut toggle (WCAG 2.1.4) and volume control` |
+| T7 | `style(hw1): responsive 375px module, focus-visible, reduced motion` |
+| T8 | `docs(hw1): record AI failures in AI_FAILURE_AUDIT.md` |
